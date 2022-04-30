@@ -21,6 +21,10 @@ public class Book {
     private String name;
     private String author;
     private BigDecimal price;
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ToString.Exclude
+
+    private Vendor vendor;
 
     public Book(String name, String author, BigDecimal price) {
         this.name = name;
